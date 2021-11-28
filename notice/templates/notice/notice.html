@@ -1,0 +1,24 @@
+{% extends 'society/base.html' %}
+{% block content %}
+
+    <h1>{{notice.count}} Notice{{ notice.count|pluralize }} Issued</h1>
+
+    <br>
+
+    {% for notice in notice %}
+
+    {% comment %} <a href="{% url 'notice:detail' notice.id %}"></a> {% endcomment %}
+    <h3>{{ notice.title }}</h3>
+    <h5>{{notice.date}}</h5>
+    <p>{{ notice.description|truncatechars:100 }}</p>
+    {% if notice.url %}
+    <img src="{{ notice.image.url }}">
+    {% endif %}
+    {% if notice.url %}
+    <a href="{{ notice.url }}">Link</a>
+    {% endif %}
+
+    {% endfor %}
+
+{% endblock %}
+

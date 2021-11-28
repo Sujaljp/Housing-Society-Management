@@ -1,0 +1,12 @@
+{% extends 'society/base.html' %}
+
+{% load static %}
+
+{% block content %}
+Home Sweet Home
+<br>
+<a href=" {% url 'notice' %}">Notices</a>
+<br>
+<a href=" {% url 'notice' %}">About</a>
+<br>
+{% endblock content %}
